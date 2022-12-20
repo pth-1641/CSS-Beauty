@@ -12,8 +12,8 @@
   </a>
   <ul class="flex mt-1">
     <li class="group">
-      <a href="/loading-bar">
-        Loading bar
+      <a href="/loading">
+        Loading
         <div
           class="w-full h-0.5 bg-black scale-x-0 group-hover:scale-x-100 duration-150"
         />

@@ -1,5 +1,5 @@
 <script>
-  import LoadingComponents from '../../components/Loading-Bar/index.svelte';
+  import LoadingComponents from '../../components/Loading/index.svelte';
 
   const mainColor = '#ff3e00';
 </script>
