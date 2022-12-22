@@ -3,7 +3,7 @@
 </script>
 
 <navbar
-  class=" fixed top-0 right-0 left-0 px-6 py-2 h-12 flex items-center gap-5"
+  class=" fixed top-0 right-0 left-0 px-6 py-2 h-12 flex items-center gap-5 bg-white shadow-sm"
 >
   <a href="/" class="flex items-center">
     <h3 class="text-xl font-bold text-[#ff3e00]">C</h3>

@@ -11,21 +11,20 @@
 
 <style>
   .loading {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: block;
+    position: relative;
     height: 50px;
     width: 50px;
   }
 
   .loading > span {
-    width: 16px;
-    height: 16px;
-    align-self: center;
-    justify-self: center;
-    background-color: var(--mainColor);
-    display: inline-block;
-    animation: square1 1.7s infinite ease-in-out both;
+    position: absolute;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    background: var(--mainColor);
+    border-radius: 50%;
+    animation: dots1 1s infinite ease-in-out;
   }
 
   .loading > span:nth-child(1) {
@@ -48,18 +47,21 @@
     animation-delay: 0.5s;
   }
 
-  @keyframes square1 {
-    0%,
-    80%,
-    100% {
-      transform: scale(0);
-      transform: scale(0);
-      opacity: 0;
+  @keyframes dots1 {
+    0% {
+      transform: translateY(0px);
+      transform: translateY(0px);
+      background: var(--mainColor);
     }
-    40% {
-      transform: scale(1);
-      transform: scale(1);
-      opacity: 1;
+    50% {
+      transform: translateY(10px);
+      transform: translateY(10px);
+      background: var(--mainColor);
+    }
+    100% {
+      transform: translateY(0px);
+      transform: translateY(0px);
+      background: var(--mainColor);
     }
   }
 </style>
