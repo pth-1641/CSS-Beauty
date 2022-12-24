@@ -1,5 +1,11 @@
 <script>
   import SvelteLogo from '../assets/svelte-logo.svg';
+
+  const routes = [
+    { label: 'Loader', path: '/loader' },
+    { label: 'Input', path: '/input' },
+    { label: 'Button', path: '/button' },
+  ];
 </script>
 
 <navbar
@@ -11,21 +17,15 @@
     <h3 class="text-xl font-bold text-[#ff3e00]">S Beauty</h3>
   </a>
   <ul class="flex mt-1 gap-5">
-    <li class="group">
-      <a href="/loader">
-        Loader
-        <div
-          class="w-full h-0.5 bg-black scale-x-0 group-hover:scale-x-100 duration-150"
-        />
-      </a>
-    </li>
-    <li class="group">
-      <a href="/input">
-        Input
-        <div
-          class="w-full h-0.5 bg-black scale-x-0 group-hover:scale-x-100 duration-150"
-        />
-      </a>
-    </li>
+    {#each routes as route}
+      <li class="group">
+        <a href={route.path}>
+          {route.label}
+          <div
+            class="w-full h-0.5 bg-black scale-x-0 group-hover:scale-x-100 duration-150"
+          />
+        </a>
+      </li>
+    {/each}
   </ul>
 </navbar>
