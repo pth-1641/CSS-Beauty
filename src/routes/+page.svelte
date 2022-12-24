@@ -1,5 +1,5 @@
 <script>
-  import HomeBg from '../assets/home-bg.jpg';
+  import HomeBg from '../assets/home-bg.webp';
   import SvelteLogo from '../assets/svelte-logo.svg';
 </script>
 

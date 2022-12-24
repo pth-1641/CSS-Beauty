@@ -57,6 +57,12 @@
   import Loader_55 from './loader-55.svelte';
   import Loader_56 from './loader-56.svelte';
   import Loader_57 from './loader-57.svelte';
+  import Loader_58 from './loader-58.svelte';
+  import Loader_59 from './loader-59.svelte';
+  import Loader_60 from './loader-60.svelte';
+  import Loader_61 from './loader-61.svelte';
+  import Loader_62 from './loader-62.svelte';
+  import Loader_63 from './loader-63.svelte';
 
   const listLoaderItems = [
     Loader_1,
@@ -116,6 +122,12 @@
     Loader_55,
     Loader_56,
     Loader_57,
+    Loader_58,
+    Loader_59,
+    Loader_60,
+    Loader_61,
+    Loader_62,
+    Loader_63,
   ];
 </script>
 
