@@ -15,6 +15,12 @@
   import Button_21 from './button-21.svelte';
   import Button_22 from './button-22.svelte';
   import Button_23 from './button-23.svelte';
+  import Button_24 from './button-24.svelte';
+  import Button_25 from './button-25.svelte';
+  import Button_26 from './button-26.svelte';
+  import Button_27 from './button-27.svelte';
+  import Button_28 from './button-28.svelte';
+  import Button_29 from './button-29.svelte';
   import Button_3 from './button-3.svelte';
   import Button_4 from './button-4.svelte';
   import Button_5 from './button-5.svelte';
@@ -49,6 +55,12 @@
     Button_21,
     Button_22,
     Button_23,
+    Button_24,
+    Button_25,
+    Button_26,
+    Button_27,
+    Button_28,
+    Button_29,
   ];
 </script>
 
