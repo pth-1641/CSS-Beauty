@@ -2,7 +2,7 @@
   import Input_1 from './input-1.svelte';
   import Input_2 from './input-2.svelte';
   import Input_3 from './input-3.svelte';
-  // import Input_4 from './input-4.svelte';
+  import Input_4 from './input-4.svelte';
   import Input_5 from './input-5.svelte';
   import Input_6 from './input-6.svelte';
   import Input_7 from './input-7.svelte';
@@ -14,7 +14,6 @@
   import Input_13 from './input-13.svelte';
   import Input_14 from './input-14.svelte';
   import Input_15 from './input-15.svelte';
-  import Input_16 from './input-16.svelte';
 
   export let mainColor;
 
@@ -22,7 +21,7 @@
     Input_1,
     Input_2,
     Input_3,
-    // Input_4,
+    Input_4,
     Input_5,
     Input_6,
     Input_7,
@@ -34,7 +33,6 @@
     Input_13,
     Input_14,
     Input_15,
-    Input_16,
   ];
 </script>
 

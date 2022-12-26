@@ -1,5 +1,13 @@
 <script>
   import Button_1 from './button-1.svelte';
+  import Button_2 from './button-2.svelte';
+  import Button_3 from './button-3.svelte';
+  import Button_4 from './button-4.svelte';
+  import Button_5 from './button-5.svelte';
+  import Button_6 from './button-6.svelte';
+  import Button_7 from './button-7.svelte';
+  import Button_8 from './button-8.svelte';
+  import Button_9 from './button-9.svelte';
   import Button_10 from './button-10.svelte';
   import Button_11 from './button-11.svelte';
   import Button_12 from './button-12.svelte';
@@ -10,7 +18,6 @@
   import Button_17 from './button-17.svelte';
   import Button_18 from './button-18.svelte';
   import Button_19 from './button-19.svelte';
-  import Button_2 from './button-2.svelte';
   import Button_20 from './button-20.svelte';
   import Button_21 from './button-21.svelte';
   import Button_22 from './button-22.svelte';
@@ -21,13 +28,9 @@
   import Button_27 from './button-27.svelte';
   import Button_28 from './button-28.svelte';
   import Button_29 from './button-29.svelte';
-  import Button_3 from './button-3.svelte';
-  import Button_4 from './button-4.svelte';
-  import Button_5 from './button-5.svelte';
-  import Button_6 from './button-6.svelte';
-  import Button_7 from './button-7.svelte';
-  import Button_8 from './button-8.svelte';
-  import Button_9 from './button-9.svelte';
+  import Button_30 from './button-30.svelte';
+  import Button_31 from './button-31.svelte';
+  import Button_32 from './button-32.svelte';
 
   export let mainColor;
 
@@ -61,6 +64,9 @@
     Button_27,
     Button_28,
     Button_29,
+    Button_30,
+    Button_31,
+    Button_32,
   ];
 </script>
 

@@ -1,17 +1,13 @@
 <script>
   export let mainColor;
-  let inputValue = '';
 </script>
 
-<div class={inputValue.trim() ? 'has-content' : ''}>
-  <input
-    type="text"
-    value={inputValue}
-    style="--mainColor:{mainColor}"
-    on:input={(e) => (inputValue = e.target.value)}
-  />
+<div>
+  <input type="text" style="--mainColor:{mainColor}" required />
   <p style="--mainColor:{mainColor}">CSS Beauty</p>
-  <span style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}">
+    <i style="--mainColor:{mainColor}" /></span
+  >
 </div>
 
 <style>
@@ -20,10 +16,10 @@
   }
 
   input {
-    border: 0;
-    padding: 4px 0;
-    border-bottom: 1px solid lightgrey;
-    background-color: transparent;
+    border: 1px solid lightgray;
+    padding: 0.35em 0.45em;
+    transition: 0.4s;
+    background: transparent;
     color: var(--mainColor);
   }
 
@@ -31,51 +27,68 @@
     outline: none;
   }
 
-  input ~ span {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    z-index: 99;
-  }
-
   input ~ span:before,
   input ~ span:after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
+    top: 0;
+    left: 50%;
     width: 0;
-    height: 100%;
+    height: 1px;
     background-color: var(--mainColor);
     transition: 0.4s;
   }
 
   input ~ span:after {
+    top: auto;
+    bottom: 0;
+  }
+
+  input ~ span i:before,
+  input ~ span i:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1px;
+    height: 0;
+    background-color: var(--mainColor);
+    transition: 0.6s;
+  }
+
+  input ~ span i:after {
     left: auto;
     right: 0;
   }
 
   input:focus ~ span:before,
   input:focus ~ span:after {
-    width: 50%;
+    left: 0;
+    width: 100%;
     transition: 0.4s;
+  }
+
+  input:focus ~ span i:before,
+  input:focus ~ span i:after {
+    top: -1px;
+    height: 100%;
+    transition: 0.6s;
   }
 
   input ~ p {
     position: absolute;
-    left: 0;
+    left: 14px;
     width: 100%;
-    top: 9px;
+    top: 10px;
     transition: 0.3s;
     z-index: -1;
     letter-spacing: 0.5px;
   }
 
   input:focus ~ p,
-  .has-content > p {
-    top: -16px;
+  input:valid ~ p {
+    top: -18px;
+    left: 0;
     font-size: 12px;
     color: var(--mainColor);
     transition: 0.3s;

@@ -4,10 +4,9 @@
 
 <div>
   <input type="text" placeholder="CSS Beauty" style="--mainColor:{mainColor}" />
-  <span class="bottom" style="--mainColor:{mainColor}" />
-  <span class="right" style="--mainColor:{mainColor}" />
-  <span class="top" style="--mainColor:{mainColor}" />
-  <span class="left" style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}">
+    <i style="--mainColor:{mainColor}" />
+  </span>
 </div>
 
 <style>
@@ -16,79 +15,63 @@
   }
 
   input {
-    width: 100%;
-    color: var(--mainColor);
-    font-size: inherit;
-    font-family: inherit;
-    background-color: transparent;
+    border: 1px solid lightgray;
     padding: 0.35em 0.45em;
-    border: 1px solid lightgrey;
-    transition: background-color 0.3s ease-in-out;
+    transition: 0.4s;
+    color: var(--mainColor);
   }
 
   input:focus {
     outline: none;
   }
 
-  span {
+  input ~ span:before,
+  input ~ span:after {
+    content: '';
     position: absolute;
-    background-color: var(--mainColor);
-    transition: transform 0.5s ease;
-  }
-
-  .bottom,
-  .top {
+    top: 0;
+    left: 0;
+    width: 0;
     height: 1px;
-    left: 0;
-    right: 0;
-    transform: scaleX(0);
+    background-color: var(--mainColor);
+    transition: 0.3s;
   }
 
-  .left,
-  .right {
+  input ~ span:after {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+  }
+
+  input ~ span i:before,
+  input ~ span i:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 1px;
-    top: 0;
-    bottom: 0;
-    transform: scaleY(0);
+    height: 0;
+    background-color: var(--mainColor);
+    transition: 0.4s;
   }
 
-  .bottom {
-    bottom: 0;
-    transform-origin: bottom right;
-  }
-
-  input:focus ~ .bottom {
-    transform-origin: bottom left;
-    transform: scaleX(1);
-  }
-
-  .right {
+  input ~ span i:after {
+    left: auto;
     right: 0;
-    transform-origin: top right;
+    top: auto;
+    bottom: 0;
   }
 
-  input:focus ~ .right {
-    transform-origin: bottom right;
-    transform: scaleY(1);
+  input:focus ~ span:before,
+  input:focus ~ span:after {
+    width: 100%;
+    transition: 0.3s;
   }
 
-  .top {
-    top: 0;
-    transform-origin: top left;
-  }
-
-  input:focus ~ .top {
-    transform-origin: top right;
-    transform: scaleX(1);
-  }
-
-  .left {
-    left: 0;
-    transform-origin: bottom left;
-  }
-
-  input:focus ~ .left {
-    transform-origin: top left;
-    transform: scaleY(1);
+  input:focus ~ span i:before,
+  input:focus ~ span i:after {
+    height: 100%;
+    transition: 0.4s;
   }
 </style>

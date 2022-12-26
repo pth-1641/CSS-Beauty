@@ -1,15 +1,9 @@
 <script>
   export let mainColor;
-  let inputValue = '';
 </script>
 
-<div class={inputValue.trim() ? 'has-content' : ''}>
-  <input
-    type="text"
-    value={inputValue}
-    style="--mainColor:{mainColor}"
-    on:input={(e) => (inputValue = e.target.value)}
-  />
+<div>
+  <input type="text" style="--mainColor:{mainColor}" required />
   <p style="--mainColor:{mainColor}">CSS Beauty</p>
   <span style="--mainColor:{mainColor}" />
 </div>
@@ -34,7 +28,7 @@
   input ~ span {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
     width: 0;
     height: 1px;
     background-color: var(--mainColor);
@@ -44,6 +38,7 @@
   input:focus ~ span {
     width: 100%;
     transition: 0.4s;
+    left: 0;
   }
 
   input ~ p {
@@ -57,11 +52,11 @@
   }
 
   input:focus ~ p,
-  .has-content > p {
+  input:valid ~ p {
     top: -16px;
     font-size: 12px;
-    transition: 0.3s;
     color: var(--mainColor);
+    transition: 0.3s;
   }
 
   input:not(:focus) ~ p {

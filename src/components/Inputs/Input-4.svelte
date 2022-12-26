@@ -18,11 +18,11 @@
   input {
     width: 100%;
     color: var(--mainColor);
-    background-color: transparent;
     font-size: inherit;
     font-family: inherit;
+    background-color: transparent;
     padding: 0.35em 0.45em;
-    border: 1px solid lightgray;
+    border: 1px solid lightgrey;
     transition: background-color 0.3s ease-in-out;
   }
 
@@ -33,7 +33,8 @@
   span {
     position: absolute;
     background-color: var(--mainColor);
-    transition: transform 0.1s ease;
+    transform-origin: center;
+    transition: transform 0.5s ease;
   }
 
   .bottom,
@@ -52,46 +53,29 @@
     transform: scaleY(0);
   }
 
-  .bottom {
-    bottom: 0;
-    transform-origin: bottom right;
-  }
-
-  input:focus ~ .bottom {
-    transform-origin: bottom left;
-    transform: scaleX(1);
-  }
-
-  .right {
-    right: 0;
-    transform-origin: top right;
-    transition-delay: 0.05s;
-  }
-
-  input:focus ~ .right {
-    transform-origin: bottom right;
-    transform: scaleY(1);
-  }
-
   .top {
     top: 0;
-    transform-origin: top left;
-    transition-delay: 0.15s;
   }
 
-  input:focus ~ .top {
-    transform-origin: top right;
-    transform: scaleX(1);
+  .bottom {
+    bottom: 0;
   }
 
   .left {
     left: 0;
-    transform-origin: bottom left;
-    transition-delay: 0.25s;
   }
 
-  input:focus ~ .left {
-    transform-origin: top left;
+  .right {
+    right: 0;
+  }
+
+  input:focus ~ .top,
+  input:focus ~ .bottom {
+    transform: scaleX(1);
+  }
+
+  input:focus ~ .left,
+  input:focus ~ .right {
     transform: scaleY(1);
   }
 </style>

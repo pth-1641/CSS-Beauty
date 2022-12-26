@@ -9,6 +9,7 @@
     padding: 8px 16px;
     position: relative;
     transition: 0.5s;
+    color: var(--mainColor);
   }
 
   button::before,

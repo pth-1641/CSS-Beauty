@@ -29,12 +29,8 @@
     z-index: 1;
     opacity: 0;
     transition: all 0.3s;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-    border-top-style: solid;
-    border-bottom-style: solid;
-    border-top-color: var(--mainColor);
-    border-bottom-color: var(--mainColor);
+    border-top: 1px solid var(--mainColor);
+    border-bottom: 1px solid var(--mainColor);
     transform: scale(0.1, 1);
   }
 

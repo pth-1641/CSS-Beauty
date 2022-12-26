@@ -33,7 +33,6 @@
   span {
     position: absolute;
     background-color: var(--mainColor);
-    transform-origin: center;
     transition: transform 0.5s ease;
   }
 
@@ -53,29 +52,43 @@
     transform: scaleY(0);
   }
 
-  .top {
-    top: 0;
-  }
-
   .bottom {
     bottom: 0;
+    transform-origin: bottom right;
   }
 
-  .left {
-    left: 0;
+  input:focus ~ .bottom {
+    transform-origin: bottom left;
+    transform: scaleX(1);
   }
 
   .right {
     right: 0;
+    transform-origin: top right;
   }
 
-  input:focus ~ .top,
-  input:focus ~ .bottom {
+  input:focus ~ .right {
+    transform-origin: bottom right;
+    transform: scaleY(1);
+  }
+
+  .top {
+    top: 0;
+    transform-origin: top left;
+  }
+
+  input:focus ~ .top {
+    transform-origin: top right;
     transform: scaleX(1);
   }
 
-  input:focus ~ .left,
-  input:focus ~ .right {
+  .left {
+    left: 0;
+    transform-origin: bottom left;
+  }
+
+  input:focus ~ .left {
+    transform-origin: top left;
     transform: scaleY(1);
   }
 </style>

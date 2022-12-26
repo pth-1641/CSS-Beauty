@@ -3,10 +3,9 @@
 </script>
 
 <div>
-  <input type="text" placeholder="CSS Beauty" style="--mainColor:{mainColor}" />
-  <span style="--mainColor:{mainColor}">
-    <i style="--mainColor:{mainColor}" />
-  </span>
+  <input type="text" style="--mainColor:{mainColor}" required />
+  <p style="--mainColor:{mainColor}">CSS Beauty</p>
+  <span style="--mainColor:{mainColor}" />
 </div>
 
 <style>
@@ -15,9 +14,10 @@
   }
 
   input {
-    border: 1px solid lightgray;
-    padding: 0.35em 0.45em;
-    transition: 0.4s;
+    border: 0;
+    padding: 4px 0;
+    border-bottom: 1px solid lightgrey;
+    background-color: transparent;
     color: var(--mainColor);
   }
 
@@ -25,53 +25,40 @@
     outline: none;
   }
 
-  input ~ span:before,
-  input ~ span:after {
-    content: '';
+  input ~ span {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 1px;
     background-color: var(--mainColor);
-    transition: 0.3s;
-  }
-
-  input ~ span:after {
-    top: auto;
-    bottom: 0;
-    left: auto;
-    right: 0;
-  }
-
-  input ~ span i:before,
-  input ~ span i:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1px;
-    height: 0;
-    background-color: var(--mainColor);
     transition: 0.4s;
   }
 
-  input ~ span i:after {
-    left: auto;
-    right: 0;
-    top: auto;
-    bottom: 0;
-  }
-
-  input:focus ~ span:before,
-  input:focus ~ span:after {
+  input:focus ~ span {
     width: 100%;
-    transition: 0.3s;
+    transition: 0.4s;
   }
 
-  input:focus ~ span i:before,
-  input:focus ~ span i:after {
-    height: 100%;
-    transition: 0.4s;
+  input ~ p {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 9px;
+    transition: 0.3s;
+    z-index: -1;
+    letter-spacing: 0.5px;
+  }
+
+  input:focus ~ p,
+  input:valid ~ p {
+    top: -16px;
+    font-size: 12px;
+    transition: 0.3s;
+    color: var(--mainColor);
+  }
+
+  input:not(:focus) ~ p {
+    color: #aaa;
   }
 </style>

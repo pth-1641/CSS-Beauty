@@ -1,15 +1,9 @@
 <script>
   export let mainColor;
-  let inputValue = '';
 </script>
 
-<div class={inputValue.trim() ? 'has-content' : ''}>
-  <input
-    type="text"
-    value={inputValue}
-    style="--mainColor:{mainColor}"
-    on:input={(e) => (inputValue = e.target.value)}
-  />
+<div>
+  <input type="text" style="--mainColor:{mainColor}" required />
   <p style="--mainColor:{mainColor}">CSS Beauty</p>
   <span style="--mainColor:{mainColor}">
     <i style="--mainColor:{mainColor}" /></span
@@ -38,47 +32,49 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 0;
     width: 0;
     height: 1px;
     background-color: var(--mainColor);
-    transition: 0.4s;
+    transition: 0.3s;
   }
 
   input ~ span:after {
     top: auto;
     bottom: 0;
+    left: auto;
+    right: 0;
   }
 
   input ~ span i:before,
   input ~ span i:after {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 0;
     width: 1px;
     height: 0;
     background-color: var(--mainColor);
-    transition: 0.6s;
+    transition: 0.4s;
   }
 
   input ~ span i:after {
     left: auto;
     right: 0;
+    top: auto;
+    bottom: 0;
   }
 
   input:focus ~ span:before,
   input:focus ~ span:after {
-    left: 0;
     width: 100%;
-    transition: 0.4s;
+    transition: 0.3s;
   }
 
   input:focus ~ span i:before,
   input:focus ~ span i:after {
-    top: -1px;
     height: 100%;
-    transition: 0.6s;
+    transition: 0.4s;
   }
 
   input ~ p {
@@ -86,13 +82,14 @@
     left: 14px;
     width: 100%;
     top: 10px;
+    color: #aaa;
     transition: 0.3s;
     z-index: -1;
     letter-spacing: 0.5px;
   }
 
   input:focus ~ p,
-  .has-content > p {
+  input:valid ~ p {
     top: -18px;
     left: 0;
     font-size: 12px;

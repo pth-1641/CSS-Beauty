@@ -28,7 +28,7 @@
     position: absolute;
     height: 100%;
     bottom: 0;
-    left: 0;
+    right: 0;
     width: 0;
     transition: 0.4s;
   }
