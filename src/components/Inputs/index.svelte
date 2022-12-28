@@ -2,7 +2,7 @@
   import Input_1 from './input-1.svelte';
   import Input_2 from './input-2.svelte';
   import Input_3 from './input-3.svelte';
-  import Input_4 from './input-4.svelte';
+  // import Input_4 from './input-4.svelte';
   import Input_5 from './input-5.svelte';
   import Input_6 from './input-6.svelte';
   import Input_7 from './input-7.svelte';
@@ -22,7 +22,7 @@
     Input_1,
     Input_2,
     Input_3,
-    Input_4,
+    // Input_4,
     Input_5,
     Input_6,
     Input_7,
