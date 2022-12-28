@@ -25,7 +25,7 @@
     justify-self: center;
     background-color: var(--mainColor);
     display: inline-block;
-    animation: square1 1.7s infinite ease-in-out both;
+    animation: loader 1.7s infinite ease-in-out both;
   }
 
   .loader > span:nth-child(1) {
@@ -48,7 +48,7 @@
     animation-delay: 0.5s;
   }
 
-  @keyframes square1 {
+  @keyframes loader {
     0%,
     80%,
     100% {

@@ -2,14 +2,14 @@
   export let mainColor;
 </script>
 
-<div class="loader"><div style="--mainColor:{mainColor}" /></div>
+<div class="loader"><span style="--mainColor:{mainColor}" /></div>
 
 <style>
   .loader {
     display: inline-block;
     transform: translateZ(1px);
   }
-  .loader > div {
+  .loader > span {
     display: inline-block;
     width: 56px;
     height: 56px;

@@ -1,7 +1,5 @@
 <script>
   export let mainColor;
-  import { selectedItem } from '../../stores';
-  import { deserialize } from '$app/forms';
   import Loader_1 from './loader-1.svelte';
   import Loader_2 from './loader-2.svelte';
   import Loader_3 from './loader-3.svelte';
@@ -67,6 +65,7 @@
   import Loader_63 from './loader-63.svelte';
   import Loader_64 from './loader-64.svelte';
 
+  import { getSelectedItemCode } from '../../stores';
   const listLoaderItems = [
     Loader_1,
     Loader_2,
@@ -133,23 +132,13 @@
     Loader_63,
     Loader_64,
   ];
-
-  const handleSelectItem = async (item) => {
-    const fileName = item.split('<')[1].slice(0, -1).toLowerCase();
-    const file = await import(`./${fileName}.svelte?raw`);
-    let content = file.default;
-    content = content.replace(/\n|\r/g, '');
-    content = content.replace(/<script>(.*?)<\/script>/g, '');
-    const cssCode = content.match(/<style>(.*?)<\/style>/)[1];
-    const htmlCode = content.replace(/<style>(.*?)<\/style>/g, '');
-  };
 </script>
 
 {#each listLoaderItems as item}
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div
     class="w-full aspect-square flex items-center justify-center border-2 hover:bg-slate-100 hover:border-transparent duration-150 cursor-pointer"
-    on:click={() => handleSelectItem(item.name)}
+    on:click={() => getSelectedItemCode(item.name)}
   >
     <svelte:component this={item} {mainColor} />
   </div>

@@ -15,6 +15,7 @@
   import Input_14 from './input-14.svelte';
   import Input_15 from './input-15.svelte';
 
+  import { getSelectedItemCode } from '../../stores';
   export let mainColor;
 
   const listInputItems = [
@@ -34,14 +35,19 @@
     Input_14,
     Input_15,
   ];
+
+  const handleInspect = (event, item) => {
+    if (event.target !== event.currentTarget) return;
+    getSelectedItemCode(item);
+  };
 </script>
 
 {#each listInputItems as item}
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div
     class="w-full py-6 flex items-center justify-center border-2 duration-150 cursor-pointer"
+    on:click={(e) => handleInspect(e, item.name)}
   >
     <svelte:component this={item} {mainColor} />
   </div>
 {/each}
-
-<!-- hover:bg-slate-100 hover:border-transparent -->

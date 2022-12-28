@@ -32,6 +32,7 @@
   import Button_31 from './button-31.svelte';
   import Button_32 from './button-32.svelte';
 
+  import { getSelectedItemCode } from '../../stores';
   export let mainColor;
 
   const listButtonItems = [
@@ -71,11 +72,11 @@
 </script>
 
 {#each listButtonItems as item}
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div
     class="w-full py-6 flex items-center justify-center border-2 duration-150 cursor-pointer"
+    on:click={() => getSelectedItemCode(item.name)}
   >
     <svelte:component this={item} {mainColor} />
   </div>
 {/each}
-
-<!-- hover:bg-slate-100 hover:border-transparent -->

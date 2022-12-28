@@ -19,5 +19,7 @@
   },
   "type": "module",
   "license": "UNLICENSED",
-  "dependencies": {}
+  "dependencies": {
+    "prismjs": "^1.29.0"
+  }
 }

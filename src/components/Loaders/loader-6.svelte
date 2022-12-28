@@ -3,9 +3,9 @@
 </script>
 
 <div class="loader">
-  <div style="--mainColor:{mainColor}" />
-  <div style="--mainColor:{mainColor}" />
-  <div style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
 </div>
 
 <style>
@@ -17,19 +17,19 @@
     justify-content: space-between;
   }
 
-  .loader div {
+  .loader span {
     width: 0.8em;
     height: 0.8em;
     border-radius: 50%;
     background-color: var(--mainColor);
   }
 
-  .loader div:nth-of-type(1) {
+  .loader span:nth-of-type(1) {
     transform: translateX(-100%);
     animation: left-swing 0.5s ease-in alternate infinite;
   }
 
-  .loader div:nth-of-type(3) {
+  .loader span:nth-of-type(3) {
     transform: translateX(-95%);
     animation: right-swing 0.5s ease-out alternate infinite;
   }

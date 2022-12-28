@@ -3,9 +3,9 @@
 </script>
 
 <div class="loader">
-  <div style="--mainColor:{mainColor}" />
-  <div style="--mainColor:{mainColor}" />
-  <div style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
 </div>
 
 <style>
@@ -13,7 +13,7 @@
     position: relative;
   }
 
-  .loader > div {
+  .loader > span {
     border: 3px solid transparent;
     border-top-color: var(--mainColor);
     border-right-color: var(--mainColor);
@@ -23,7 +23,7 @@
     left: 50%;
   }
 
-  .loader > div:nth-child(1) {
+  .loader > span:nth-child(1) {
     width: 3.5em;
     height: 3.5em;
     margin-left: -1.75em;
@@ -31,7 +31,7 @@
     animation: spin 2s linear infinite;
   }
 
-  .loader > div:nth-child(2) {
+  .loader > span:nth-child(2) {
     width: 2.1em;
     height: 2.1em;
     margin-left: -1.05em;
@@ -39,7 +39,7 @@
     animation: spin 1.75s linear reverse infinite;
   }
 
-  .loader > div:nth-child(3) {
+  .loader > span:nth-child(3) {
     width: 0.8em;
     height: 0.8em;
     margin-left: -0.4em;

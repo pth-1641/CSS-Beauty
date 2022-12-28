@@ -3,15 +3,15 @@
 </script>
 
 <div class="loader">
-  <div style="--mainColor:{mainColor}" />
-  <div style="--mainColor:{mainColor}" />
-  <div style="--mainColor:{mainColor}" />
-  <div style="--mainColor:{mainColor}" />
-  <div style="--mainColor:{mainColor}" />
-  <div style="--mainColor:{mainColor}" />
-  <div style="--mainColor:{mainColor}" />
-  <div style="--mainColor:{mainColor}" />
-  <div style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
 </div>
 
 <style>
@@ -25,7 +25,7 @@
     align-items: center;
   }
 
-  .loader > div {
+  .loader > span {
     width: 0.5em;
     height: 0.5em;
     background-color: var(--mainColor);
@@ -33,23 +33,23 @@
     animation: fade 1.5s alternate ease-in-out infinite;
   }
 
-  .loader > div:nth-of-type(2),
-  .loader > div:nth-of-type(4) {
+  .loader > span:nth-of-type(2),
+  .loader > span:nth-of-type(4) {
     animation-delay: 0.25s;
   }
 
-  .loader > div:nth-of-type(3),
-  .loader > div:nth-of-type(5),
-  .loader > div:nth-of-type(7) {
+  .loader > span:nth-of-type(3),
+  .loader > span:nth-of-type(5),
+  .loader > span:nth-of-type(7) {
     animation-delay: 0.5s;
   }
 
-  .loader > div:nth-of-type(6),
-  .loader > div:nth-of-type(8) {
+  .loader > span:nth-of-type(6),
+  .loader > span:nth-of-type(8) {
     animation-delay: 0.75s;
   }
 
-  .loader > div:nth-of-type(9) {
+  .loader > span:nth-of-type(9) {
     animation-delay: 1s;
   }
 

@@ -3,7 +3,7 @@
 </script>
 
 <div class="loader">
-  <div style="--mainColor:{mainColor}" />
+  <span style="--mainColor:{mainColor}" />
 </div>
 
 <style>
@@ -11,7 +11,8 @@
     perspective: 120px;
   }
 
-  .loader > div {
+  .loader > span {
+    display: block;
     width: 2em;
     height: 2em;
     border-radius: 50%;
