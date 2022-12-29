@@ -25,6 +25,7 @@
     position: relative;
     transform: scale(1.1);
   }
+
   .loader > span:before {
     content: '';
     position: absolute;

@@ -6,7 +6,7 @@ pre[class*='language-'] {
   text-align: left;
   white-space: pre;
   word-spacing: normal;
-  word-break: break-all;
+  word-break: normal;
   line-height: 1.5;
 
   -moz-tab-size: 4;
@@ -50,7 +50,7 @@ pre[class*='language-'] {
 /* Inline code */
 :not(pre) > code[class*='language-'] {
   padding: 0.1em;
-  padding-right: 1em;
+  padding-right: 12px;
   padding-left: 0.5em;
 }
 

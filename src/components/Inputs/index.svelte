@@ -45,7 +45,7 @@
 {#each listInputItems as item}
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div
-    class="w-full py-6 flex items-center justify-center border-2 duration-150 cursor-pointer"
+    class="w-full max-w-[300px] py-6 flex items-center justify-center border-2 duration-150 cursor-pointer"
     on:click={(e) => handleInspect(e, item.name)}
   >
     <svelte:component this={item} {mainColor} />

@@ -15,12 +15,12 @@
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-    width: 2em;
+    width: 32px;
   }
 
   span {
-    width: 0.3em;
-    height: 1em;
+    width: 5px;
+    height: 20px;
     background-color: var(--mainColor);
   }
 

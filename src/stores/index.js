@@ -14,11 +14,14 @@ export const getSelectedItemCode = async (item) => {
   let content = file.default;
   const htmlCode = content.split('</script>')[1].split('<style>')[0].trim();
   const cssCode = content.split('<style>')[1].replace('</style>', '');
+  console.log();
   codeInspect.update(
     (code) =>
       (code = {
-        htmlCode: htmlCode.replace(/style="--mainColor:{mainColor}"/g, ''),
-        cssCode: cssCode.replace(/var(--mainColor)/g, '#ff3e00'),
+        htmlCode: htmlCode
+          .replace(/style="--mainColor:{mainColor}"/g, '')
+          .trim(),
+        cssCode: cssCode.split('var(--mainColor)').join('#ff3e00'),
       })
   );
   isOpenModal.update((status) => (status = true));

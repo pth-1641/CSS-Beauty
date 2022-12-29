@@ -4,7 +4,7 @@
 </script>
 
 <div
-  class="w-full min-h-[calc(100vh-3rem)] bg-bottom bg-cover text-white flex items-end py-20 px-10"
+  class="w-full min-h-[calc(100vh-3rem)] bg-bottom bg-cover text-white flex items-end py-20 px-5 sm:px-10"
   style="background-image: url({HomeBg}) "
 >
   <div class="max-w-md">

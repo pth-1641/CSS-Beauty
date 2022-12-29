@@ -1,4 +1,6 @@
 <script>
+  import { page } from '$app/stores';
+  import Transition from '../components/Transition.svelte';
   import Navbar from '../components/Navbar.svelte';
   import Modal from '../components/Modal.svelte';
   import '../styles/globals.css';
@@ -27,6 +29,8 @@
   {/if}
   <div class="h-12" />
   <main class="antialiased">
-    <slot />
+    <Transition url={$page.url}>
+      <slot />
+    </Transition>
   </main>
 </div>

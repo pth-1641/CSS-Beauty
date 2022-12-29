@@ -137,7 +137,7 @@
 {#each listLoaderItems as item}
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div
-    class="w-full aspect-square flex items-center justify-center border-2 hover:bg-slate-100 hover:border-transparent duration-150 cursor-pointer"
+    class="w-full max-w-[110px] aspect-square flex items-center justify-center border-2 hover:bg-slate-100 hover:border-transparent duration-150 cursor-pointer"
     on:click={() => getSelectedItemCode(item.name)}
   >
     <svelte:component this={item} {mainColor} />
