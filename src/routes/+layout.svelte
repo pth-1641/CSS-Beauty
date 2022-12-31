@@ -6,9 +6,7 @@
   import '../styles/globals.css';
   import '../styles/prism-synthwave84.css';
   import { isOpenModal } from '../stores';
-
-  let isOpen;
-  isOpenModal.subscribe((status) => (isOpen = status));
+  import Footer from '../components/Footer.svelte';
 </script>
 
 <svelte:head>
@@ -24,13 +22,16 @@
 
 <div class="app">
   <Navbar />
-  {#if isOpen}
+  {#if $isOpenModal}
     <Modal />
   {/if}
   <div class="h-12" />
-  <main class="antialiased">
+  <main class={`antialiased ${$page.route.id !== '/' ? 'min-h-screen' : ''}`}>
     <Transition url={$page.url}>
       <slot />
     </Transition>
   </main>
+  {#if $page.route.id !== '/'}
+    <Footer />
+  {/if}
 </div>

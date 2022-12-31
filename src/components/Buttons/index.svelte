@@ -1,82 +1,23 @@
 <script>
-  import Button_1 from './button-1.svelte';
-  import Button_2 from './button-2.svelte';
-  import Button_3 from './button-3.svelte';
-  import Button_4 from './button-4.svelte';
-  import Button_5 from './button-5.svelte';
-  import Button_6 from './button-6.svelte';
-  import Button_7 from './button-7.svelte';
-  import Button_8 from './button-8.svelte';
-  import Button_9 from './button-9.svelte';
-  import Button_10 from './button-10.svelte';
-  import Button_11 from './button-11.svelte';
-  import Button_12 from './button-12.svelte';
-  import Button_13 from './button-13.svelte';
-  import Button_14 from './button-14.svelte';
-  import Button_15 from './button-15.svelte';
-  import Button_16 from './button-16.svelte';
-  import Button_17 from './button-17.svelte';
-  import Button_18 from './button-18.svelte';
-  import Button_19 from './button-19.svelte';
-  import Button_20 from './button-20.svelte';
-  import Button_21 from './button-21.svelte';
-  import Button_22 from './button-22.svelte';
-  import Button_23 from './button-23.svelte';
-  import Button_24 from './button-24.svelte';
-  import Button_25 from './button-25.svelte';
-  import Button_26 from './button-26.svelte';
-  import Button_27 from './button-27.svelte';
-  import Button_28 from './button-28.svelte';
-  import Button_29 from './button-29.svelte';
-  import Button_30 from './button-30.svelte';
-  import Button_31 from './button-31.svelte';
-  import Button_32 from './button-32.svelte';
+  import { onMount } from 'svelte';
+  import { importComponents } from '../../utils/get-components';
+  import { handleInspectCode } from '../../stores';
 
-  import { getSelectedItemCode } from '../../stores';
   export let mainColor;
+  let components = [];
 
-  const listButtonItems = [
-    Button_1,
-    Button_2,
-    Button_3,
-    Button_4,
-    Button_5,
-    Button_6,
-    Button_7,
-    Button_8,
-    Button_9,
-    Button_10,
-    Button_11,
-    Button_12,
-    Button_13,
-    Button_14,
-    Button_15,
-    Button_16,
-    Button_17,
-    Button_18,
-    Button_19,
-    Button_20,
-    Button_21,
-    Button_22,
-    Button_23,
-    Button_24,
-    Button_25,
-    Button_26,
-    Button_27,
-    Button_28,
-    Button_29,
-    Button_30,
-    Button_31,
-    Button_32,
-  ];
+  onMount(async () => {
+    const data = await importComponents('Buttons');
+    components = data;
+  });
 </script>
 
-{#each listButtonItems as item}
+{#each components as component}
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div
     class="w-full max-w-[180px] py-6 flex items-center justify-center border-2 duration-150 cursor-pointer"
-    on:click={() => getSelectedItemCode(item.name)}
+    on:click={(event) => handleInspectCode({ ...component, event })}
   >
-    <svelte:component this={item} {mainColor} />
+    <svelte:component this={component.name} {mainColor} />
   </div>
 {/each}

@@ -2,9 +2,11 @@
   import { scale, fade, fly } from 'svelte/transition';
   import { isOpenModal, codeInspect } from '../stores';
   import Prism from 'prismjs';
+  import { onDestroy } from 'svelte';
 
   let code;
   let copied;
+  let interval;
 
   const handleCloseModal = (e) => {
     if (e.target !== e.currentTarget) return;
@@ -16,10 +18,14 @@
   const handleCopyCode = (codeName) => {
     navigator.clipboard.writeText(codeName);
     copied = true;
-    setTimeout(() => {
+    interval = setTimeout(() => {
       copied = false;
-    }, 2500);
+    }, 2000);
   };
+
+  onDestroy(() => {
+    clearInterval(interval);
+  });
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -50,7 +56,7 @@
     </div>
   {/if}
   <div
-    class="absolute inset-x-4 sm:static flex p-4 rounded-lg max-w-md text-white bg-[rgba(0,0,0,0.8)]"
+    class="absolute inset-x-4 sm:static flex p-4 rounded-lg sm:w-full sm:max-w-md text-white bg-[rgba(0,0,0,0.8)]"
     transition:scale
   >
     <div class="w-full">
@@ -85,6 +91,7 @@
 </div>
 
 <style>
+  /* Thickness */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;

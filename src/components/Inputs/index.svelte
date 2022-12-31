@@ -1,53 +1,23 @@
 <script>
-  import Input_1 from './input-1.svelte';
-  import Input_2 from './input-2.svelte';
-  import Input_3 from './input-3.svelte';
-  // import Input_4 from './input-4.svelte';
-  import Input_5 from './input-5.svelte';
-  import Input_6 from './input-6.svelte';
-  import Input_7 from './input-7.svelte';
-  import Input_8 from './input-8.svelte';
-  import Input_9 from './input-9.svelte';
-  import Input_10 from './input-10.svelte';
-  import Input_11 from './input-11.svelte';
-  import Input_12 from './input-12.svelte';
-  import Input_13 from './input-13.svelte';
-  import Input_14 from './input-14.svelte';
-  import Input_15 from './input-15.svelte';
+  import { onMount } from 'svelte';
+  import { importComponents } from '../../utils/get-components';
+  import { handleInspectCode } from '../../stores';
 
-  import { getSelectedItemCode } from '../../stores';
   export let mainColor;
+  let components = [];
 
-  const listInputItems = [
-    Input_1,
-    Input_2,
-    Input_3,
-    // Input_4,
-    Input_5,
-    Input_6,
-    Input_7,
-    Input_8,
-    Input_9,
-    Input_10,
-    Input_11,
-    Input_12,
-    Input_13,
-    Input_14,
-    Input_15,
-  ];
-
-  const handleInspect = (event, item) => {
-    if (event.target !== event.currentTarget) return;
-    getSelectedItemCode(item);
-  };
+  onMount(async () => {
+    const data = await importComponents('Inputs');
+    components = data;
+  });
 </script>
 
-{#each listInputItems as item}
+{#each components as component}
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div
     class="w-full max-w-[300px] py-6 flex items-center justify-center border-2 duration-150 cursor-pointer"
-    on:click={(e) => handleInspect(e, item.name)}
+    on:click={(event) => handleInspectCode({ ...component, event })}
   >
-    <svelte:component this={item} {mainColor} />
+    <svelte:component this={component.name} {mainColor} />
   </div>
 {/each}

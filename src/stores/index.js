@@ -7,22 +7,11 @@ export const codeInspect = writable({
 
 export const isOpenModal = writable(false);
 
-export const getSelectedItemCode = async (item) => {
-  const fileName = item.split('<')[1].slice(0, -1).toLowerCase();
-  const folder = item.split('<')[1].split('-')[0] + 's';
-  const file = await import(`../components/${folder}/${fileName}.svelte?raw`);
-  let content = file.default;
-  const htmlCode = content.split('</script>')[1].split('<style>')[0].trim();
-  const cssCode = content.split('<style>')[1].replace('</style>', '');
-  console.log();
-  codeInspect.update(
-    (code) =>
-      (code = {
-        htmlCode: htmlCode
-          .replace(/style="--mainColor:{mainColor}"/g, '')
-          .trim(),
-        cssCode: cssCode.split('var(--mainColor)').join('#ff3e00'),
-      })
-  );
-  isOpenModal.update((status) => (status = true));
+export const handleInspectCode = ({ html, css, event }) => {
+  if (event.target.tagName.toLowerCase() === 'input') return;
+  codeInspect.set({
+    htmlCode: html.replace(/ style="--mainColor:{mainColor}"/g, ''),
+    cssCode: css.split('var(--mainColor)').join('#ff3e00'),
+  });
+  isOpenModal.update((state) => (state = true));
 };
