@@ -26,12 +26,12 @@
     <Modal />
   {/if}
   <div class="h-12" />
-  <main class={`antialiased ${$page.route.id !== '/' ? 'min-h-screen' : ''}`}>
+  <main class={`antialiased ${$page.route?.id !== '/' ? 'min-h-screen' : ''}`}>
     <Transition url={$page.url}>
       <slot />
     </Transition>
   </main>
-  {#if $page.route.id !== '/'}
+  {#if $page.route?.id !== '/'}
     <Footer />
   {/if}
 </div>

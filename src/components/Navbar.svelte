@@ -14,7 +14,7 @@
   ];
 
   onMount(() => {
-    currentPath = $page.route.id;
+    currentPath = $page.route?.id;
   });
 </script>
 
