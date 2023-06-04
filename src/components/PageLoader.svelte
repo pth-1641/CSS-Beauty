@@ -1,4 +1,4 @@
-<div class="h-[calc(100vh-86px)] flex items-center justify-center">
+<div class="h-[calc(100vh-48px)] flex items-center justify-center">
   <span class="loader" />
 </div>
 
