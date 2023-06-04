@@ -176,6 +176,11 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@sveltejs/adapter-static@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-2.0.2.tgz#49afd27787fb73d789017d002a91031088494139"
+  integrity sha512-9wYtf6s6ew7DHUHMrt55YpD1FgV7oWql2IGsW5BXquLxqcY9vjrqCFo0TzzDpo+ZPZkW/v77k0eOP6tsAb8HmQ==
+
 "@sveltejs/adapter-vercel@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-vercel/-/adapter-vercel-1.0.0.tgz#e3e59c9e3be40ecc8c944c763ca1cdf3c9189016"

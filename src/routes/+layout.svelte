@@ -7,6 +7,8 @@
   import '../styles/prism-synthwave84.css';
   import { isOpenModal } from '../stores';
   import Footer from '../components/Footer.svelte';
+
+  export const prerender = true;
 </script>
 
 <svelte:head>
