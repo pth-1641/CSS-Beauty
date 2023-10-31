@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import { importComponents } from '../../utils/get-components';
   import { handleInspectCode } from '../../stores';
@@ -9,7 +8,7 @@
   let components = [];
   let isLoading = true;
 
-  onMount(async () => {
+  (async () => {
     try {
       const data = await importComponents('Loaders');
       components = data;
@@ -18,7 +17,7 @@
     } finally {
       isLoading = false;
     }
-  });
+  })()
 </script>
 
 {#if isLoading}
