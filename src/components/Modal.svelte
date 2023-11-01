@@ -56,7 +56,7 @@
     </div>
   {/if}
   <div
-    class="absolute inset-x-4 sm:static flex p-4 rounded-lg sm:w-full sm:max-w-md text-white bg-[rgba(0,0,0,0.8)]"
+    class="absolute inset-x-8 sm:static flex p-4 rounded-lg sm:w-full sm:max-w-md text-white bg-[rgba(0,0,0,0.8)]"
     transition:scale
   >
     <div class="w-full">
