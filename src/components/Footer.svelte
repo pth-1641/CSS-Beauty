@@ -3,11 +3,9 @@
 </script>
 
 <div class="border-t py-2 px-4">
-  <div class="max-w-7xl flex items-center justify-between mx-auto">
-    <span class="text-sm">
-      © {year} CSS Beauty
-    </span>
-    <span class="flex items-center gap-4">
+  <div class="max-w-7xl mx-auto text-sm text-center">
+    © {year} CSS Beauty - All rights reversed
+    <!-- <span class="flex items-center gap-4">
       <a
         href="https://github.com/pth-1641"
         target="_blank"
@@ -40,6 +38,6 @@
           />
         </svg>
       </a>
-    </span>
+    </span> -->
   </div>
 </div>

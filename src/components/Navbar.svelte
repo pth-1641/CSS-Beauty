@@ -1,16 +1,21 @@
 <script>
-  import SvelteLogo from '../assets/svelte-logo.svg';
-  import { fade, fly } from 'svelte/transition';
-  import { onMount } from 'svelte';
-  import { page } from '$app/stores';
+  import SvelteLogo from "../assets/svelte-logo.svg";
+  import { fade, fly } from "svelte/transition";
+  import { onMount } from "svelte";
+  import { page } from "$app/stores";
+  import LoaderIcon from "./icons/LoaderIcon.svelte";
+  import InputIcon from "./icons/InputIcon.svelte";
+  import ButtonIcon from "./icons/ButtonIcon.svelte";
+  import FacebookIcon from "./icons/FacebookIcon.svelte";
+  import GithubIcon from "./icons/GithubIcon.svelte";
 
   let currentPath;
   let openMenu;
 
   const routes = [
-    { label: 'Loader', path: '/loader' },
-    { label: 'Input', path: '/input' },
-    { label: 'Button', path: '/button' },
+    { label: "Loader", path: "/loader", icon: LoaderIcon },
+    { label: "Input", path: "/input", icon: InputIcon },
+    { label: "Button", path: "/button", icon: ButtonIcon },
   ];
 
   onMount(() => {
@@ -19,27 +24,50 @@
 </script>
 
 <div
-  class=" fixed top-0 right-0 left-0 px-6 py-2 h-12 flex items-center gap-5 bg-white shadow-sm z-50"
+  class="fixed top-0 right-0 left-0 px-6 py-2 h-12 grid grid-cols-3 gap-5 bg-white shadow-sm z-50"
 >
-  <a href="/" class="flex items-center" on:click={() => (currentPath = '/')}>
-    <h3 class="text-xl font-bold text-[#ff3e00]">C</h3>
+  <a href="/" class="flex items-center" on:click={() => (currentPath = "/")}>
+    <h3 class="text-xl font-bold text-primary">C</h3>
     <img src={SvelteLogo} alt="CSS Beauty" class="w-6 h-6" />
-    <h3 class="text-xl font-bold text-[#ff3e00]">S Beauty</h3>
+    <h3 class="text-xl font-bold text-primary">S Beauty</h3>
   </a>
-  <ul class="hidden sm:flex mt-1 gap-5">
+  <ul class="hidden sm:flex mt-1 gap-12 lg:flex items-center justify-center">
     {#each routes as route}
       <li class="group">
         <a href={route.path} on:click={() => (currentPath = route.path)}>
-          {route.label}
+          <div class="flex items-center gap-1">
+            <svelte:component this={route.icon} class="w-5" />
+            {route.label}
+          </div>
           <div
             class={`w-full h-0.5 bg-black group-hover:scale-x-100 duration-150 ${
-              route.path === currentPath ? 'scale-x-100' : 'scale-x-0'
+              route.path === currentPath
+                ? "scale-x-100 bg-primary"
+                : "scale-x-0"
             }`}
           />
         </a>
       </li>
     {/each}
   </ul>
+  <div class="flex items-center gap-3 justify-end">
+    <a
+      href="https://www.facebook.com/pth.1641"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hover:text-primary duration-150"
+    >
+      <FacebookIcon />
+    </a>
+    <a
+      href="https://github.com/pth-1641"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hover:text-primary duration-150"
+    >
+      <GithubIcon />
+    </a>
+  </div>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <img
     class="sm:hidden h-full ml-auto"

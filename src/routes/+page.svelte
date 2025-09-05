@@ -1,6 +1,6 @@
 <script>
-  import HomeBg from '../assets/home-bg.webp';
-  import SvelteLogo from '../assets/svelte-logo.svg';
+  import HomeBg from "../assets/home-bg.webp";
+  import SvelteLogo from "../assets/svelte-logo.svg";
 </script>
 
 <div
@@ -8,12 +8,12 @@
   style="background-image: url({HomeBg}) "
 >
   <div class="max-w-md">
-    <div class="text-7xl font-bold text-[#ff3e00] flex items-center">
+    <div class="text-7xl font-bold text-primary flex items-center">
       <h3>C</h3>
       <img src={SvelteLogo} alt="CSS Beauty" class="w-20 h-20" />
       <h3>S</h3>
     </div>
-    <h3 class="text-7xl font-bold text-[#ff3e00] leading-10">Beauty</h3>
+    <h3 class="text-7xl font-bold text-primary leading-10">Beauty</h3>
     <h1 class="text-4xl font-bold mb-4 mt-16">
       Beautifully simple click-to-copy CSS effects
     </h1>

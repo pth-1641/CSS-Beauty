@@ -1,17 +1,53 @@
 <script>
-  import { page } from '$app/stores';
-  import Transition from '../components/Transition.svelte';
-  import Navbar from '../components/Navbar.svelte';
-  import Modal from '../components/Modal.svelte';
-  import '../styles/globals.css';
-  import '../styles/prism-synthwave84.css';
-  import { isOpenModal } from '../stores';
-  import Footer from '../components/Footer.svelte';
+  import { page } from "$app/stores";
+  import Transition from "../components/Transition.svelte";
+  import Navbar from "../components/Navbar.svelte";
+  import Modal from "../components/Modal.svelte";
+  import "../styles/globals.css";
+  import "../styles/prism-synthwave84.css";
+  import { isOpenModal } from "../stores";
+  import Footer from "../components/Footer.svelte";
 </script>
 
 <svelte:head>
-  <title>CSS Beauty</title>
-  <meta name="description" content="CSS Beauty" />
+  <title>CSS Beauty - Beautifully simple click-to-copy CSS effects</title>
+  <meta
+    name="description"
+    content="Browse a carefully crafted collection of loaders, hover effects, transitions, and other CSS effects to use in your next project. Effects are designed with an emphasis on fluidity, simplicity, and ease of use."
+  />
+  <!-- OG -->
+  <meta
+    name="og:title"
+    content="CSS Beauty - Beautifully simple click-to-copy CSS effects"
+  />
+  <meta
+    name="og:description"
+    content="Browse a carefully crafted collection of loaders, hover effects, transitions, and other CSS effects to use in your next project. Effects are designed with an emphasis on fluidity, simplicity, and ease of use."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://css-beauty.vercel.app" />
+  <meta
+    property="og:image"
+    content="https://raw.githubusercontent.com/pth-1641/CSS-Beauty/master/static/home.jpg"
+  />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="https://css-beauty.vercel.app" />
+  <meta property="twitter:url" content="https://css-beauty.vercel.app" />
+  <meta
+    name="twitter:title"
+    content="CSS Beauty - Beautifully simple click-to-copy CSS effects"
+  />
+  <meta
+    name="twitter:description"
+    content="Browse a carefully crafted collection of loaders, hover effects, transitions, and other CSS effects to use in your next project. Effects are designed with an emphasis on fluidity, simplicity, and ease of use."
+  />
+  <meta
+    name="twitter:image"
+    content="https://raw.githubusercontent.com/pth-1641/CSS-Beauty/master/static/home.jpg"
+  />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -26,12 +62,14 @@
     <Modal />
   {/if}
   <div class="h-12" />
-  <main class={`antialiased ${$page.route?.id !== '/' ? 'min-h-screen' : ''}`}>
+  <main
+    class={`antialiased ${$page.route?.id !== "/" ? "min-h-[calc(100vh_-_48px)]" : ""}`}
+  >
     <Transition url={$page.url}>
       <slot />
     </Transition>
   </main>
-  {#if $page.route?.id !== '/'}
+  {#if $page.route?.id !== "/"}
     <Footer />
   {/if}
 </div>
