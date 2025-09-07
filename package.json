@@ -22,5 +22,8 @@
   "license": "UNLICENSED",
   "dependencies": {
     "prismjs": "^1.29.0"
+  },
+  "engines": {
+    "node": "22.x"
   }
 }
