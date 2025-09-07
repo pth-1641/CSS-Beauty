@@ -1,30 +1,28 @@
-export const importComponents = async (folder) => {
-  let allComponents;
-  switch (folder) {
-    case 'Loaders':
-      allComponents = import.meta.glob(`../components/Loaders/*.svelte`);
-      break;
-    case 'Inputs':
-      allComponents = import.meta.glob(`../components/Inputs/*.svelte`);
-      break;
-    case 'Buttons':
-      allComponents = import.meta.glob(`../components/Buttons/*.svelte`);
-      break;
-    default:
-      allComponents = [];
-  }
+const componentGlobs = {
+  Loaders: import.meta.glob("../components/Loaders/*.svelte"),
+  Inputs: import.meta.glob("../components/Inputs/*.svelte"),
+  Buttons: import.meta.glob("../components/Buttons/*.svelte"),
+};
+
+export const importComponents = async (folder, onLoad) => {
+  const allComponents = componentGlobs[folder] || [];
   const components = [];
 
   for (const path in allComponents) {
-    if (path.includes('index')) continue;
+    if (path.includes("index")) continue;
     const module = await allComponents[path]();
     const name = module.default;
-    const fileName = path.split('/').pop().split('.')[0];
+    const fileName = path.split("/").pop().split(".")[0];
     const raw = await import(`../components/${folder}/${fileName}.svelte?raw`);
     const content = raw.default;
-    const html = content.split('</script>')[1].split('<style>')[0].trim();
-    const css = content.split('<style>')[1].replace('</style>', '');
+
+    const htmlCodeBlocks = content.match(/<\/script>([^]*?)<style>/);
+    const html = htmlCodeBlocks?.[1]?.trim();
+
+    const cssCodeBlocks = content.match(/<style>([^]*?)<\/style>/);
+    const css = cssCodeBlocks?.[1]?.split(":global(.dark)")?.[0]?.trim();
     components.push({ html, css, name });
+    onLoad((components.length / Object.keys(allComponents).length) * 100);
   }
 
   return components;

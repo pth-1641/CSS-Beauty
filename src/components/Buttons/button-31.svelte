@@ -29,7 +29,7 @@
   }
 
   div button::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 5px;
     left: -2px;
@@ -45,7 +45,7 @@
   }
 
   div button::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 5px;
     top: -5px;
@@ -58,5 +58,10 @@
 
   div button:hover::after {
     transform: scaleX(0);
+  }
+
+  :global(.dark) div button::before,
+  :global(.dark) div button::after {
+    background-color: #1c1e22;
   }
 </style>

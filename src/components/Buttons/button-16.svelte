@@ -1,34 +1,46 @@
 <script>
-  export let mainColor;
+  export let mainColor = "orangered";
 </script>
 
-<button style="--mainColor:{mainColor}">Hover me</button>
+<div class="wrapper" style="--mainColor:{mainColor}">
+  <button>Hover me</button>
+</div>
 
 <style>
-  button {
-    padding: 8px 16px;
-    outline: 0;
-    border: 1px solid black;
-    cursor: pointer;
+  .wrapper {
     position: relative;
-    background-color: transparent;
-    color: #fff;
   }
 
-  button::after {
-    content: '';
-    background-color: var(--mainColor);
-    width: 100%;
-    z-index: -1;
+  .wrapper::before {
+    content: "";
     position: absolute;
-    height: 100%;
     top: 7px;
     left: 7px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainColor);
     transition: 0.2s;
+    z-index: 0;
+    pointer-events: none;
   }
 
-  button:hover::after {
-    top: 0px;
-    left: 0px;
+  .wrapper:hover::before {
+    top: 0;
+    left: 0;
+  }
+
+  button {
+    position: relative;
+    z-index: 1;
+    padding: 8px 16px;
+    border: 1px solid #000;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition-duration: 300ms;
+  }
+
+  :global(.dark) button {
+    border-color: #ccc;
   }
 </style>

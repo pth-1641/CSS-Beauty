@@ -2,19 +2,18 @@
   export let mainColor;
 </script>
 
-<button style="--mainColor:{mainColor}"> Hover me </button>
+<div class="wrapper" style="--mainColor:{mainColor}">
+  <button> Hover me </button>
+</div>
 
 <style>
-  button {
-    padding: 8px 16px;
+  .wrapper {
     position: relative;
-    transition: 0.5s;
-    color: var(--mainColor);
   }
 
-  button::before,
-  button::after {
-    content: '';
+  .wrapper::before,
+  .wrapper::after {
+    content: "";
     position: absolute;
     width: 0px;
     height: 0px;
@@ -23,33 +22,41 @@
     top: 25%;
   }
 
-  button::before {
+  .wrapper::before {
     left: 0;
-    z-index: -1;
+    z-index: 2;
   }
-  button::after {
+  .wrapper::after {
     right: 0;
-    z-index: -2;
+    z-index: 1;
   }
 
-  button:hover {
-    color: white;
-  }
-
-  button:hover::before,
-  button:hover::after {
+  .wrapper:hover::before,
+  .wrapper:hover::after {
     width: 100%;
     height: 100%;
     border-radius: 0;
     background-color: var(--mainColor);
   }
 
-  button:hover::before {
+  .wrapper:hover::before {
     top: 0;
   }
 
-  button:hover::after {
+  .wrapper:hover::after {
     right: -6px;
     filter: brightness(0.8);
+  }
+
+  button {
+    padding: 8px 16px;
+    position: relative;
+    transition: 0.5s;
+    color: var(--mainColor);
+    z-index: 3;
+  }
+
+  button:hover {
+    color: white;
   }
 </style>

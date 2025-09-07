@@ -6,8 +6,8 @@
   <input type="text" style="--mainColor:{mainColor}" required />
   <p style="--mainColor:{mainColor}">CSS Beauty</p>
   <span style="--mainColor:{mainColor}">
-    <i style="--mainColor:{mainColor}" /></span
-  >
+    <i style="--mainColor:{mainColor}" />
+  </span>
 </div>
 
 <style>
@@ -29,7 +29,7 @@
 
   input ~ span:before,
   input ~ span:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -48,7 +48,7 @@
 
   input ~ span i:before,
   input ~ span i:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -81,11 +81,12 @@
     position: absolute;
     left: 14px;
     width: 100%;
-    top: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     color: #aaa;
     transition: 0.3s;
-    z-index: -1;
     letter-spacing: 0.5px;
+    pointer-events: none;
   }
 
   input:focus ~ p,

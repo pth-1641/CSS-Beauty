@@ -36,7 +36,7 @@
 
   input ~ span:before,
   input ~ span:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -63,7 +63,7 @@
     width: 100%;
     top: 9px;
     transition: 0.3s;
-    z-index: -1;
+    pointer-events: none;
     letter-spacing: 0.5px;
   }
 

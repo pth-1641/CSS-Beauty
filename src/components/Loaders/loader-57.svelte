@@ -20,7 +20,6 @@
     height: 5px;
     border-radius: 8px;
     background: var(--mainColor);
-    box-shadow: 0 0 10px 0 #fecdff;
   }
 
   .loader > span:nth-child(1) {

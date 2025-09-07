@@ -18,6 +18,7 @@
     border-bottom-color: #aaa;
     padding: 0.35em 0.45em;
     color: var(--mainColor);
+    background-color: transparent;
   }
 
   input:focus {

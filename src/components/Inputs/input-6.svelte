@@ -19,6 +19,7 @@
     padding: 0.35em 0.45em;
     transition: 0.4s;
     color: var(--mainColor);
+    background-color: transparent;
   }
 
   input:focus {
@@ -27,7 +28,7 @@
 
   input ~ span:before,
   input ~ span:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -46,7 +47,7 @@
 
   input ~ span i:before,
   input ~ span i:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;

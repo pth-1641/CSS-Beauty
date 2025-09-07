@@ -1,5 +1,14 @@
-<div class="h-[calc(100vh-48px)] flex items-center justify-center">
+<script>
+  export let percent;
+</script>
+
+<div
+  class="h-[calc(100vh_-_149px)] flex items-center flex-col gap-1.5 justify-center"
+>
   <span class="loader" />
+  <p class="text-primary text-sm font-medium">
+    {percent?.toFixed(2) || 0}%
+  </p>
 </div>
 
 <style>

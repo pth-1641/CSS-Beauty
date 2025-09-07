@@ -15,7 +15,7 @@
 
   button::before,
   button::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     width: 10%;
@@ -42,5 +42,10 @@
 
   button:hover::after {
     left: 80%;
+  }
+
+  :global(.dark) button::before,
+  :global(.dark) button::after {
+    background-color: #1c1e22;
   }
 </style>

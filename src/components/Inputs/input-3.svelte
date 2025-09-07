@@ -20,6 +20,7 @@
     border: 0;
     color: var(--mainColor);
     border-bottom: 1px solid lightgray;
+    background-color: transparent;
   }
 
   input ~ span {
@@ -33,7 +34,7 @@
 
   input ~ span:before,
   input ~ span:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;

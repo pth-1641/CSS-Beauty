@@ -17,7 +17,7 @@
     <h1 class="text-4xl font-bold mb-4 mt-16">
       Beautifully simple click-to-copy CSS effects
     </h1>
-    <p class="">
+    <p>
       A carefully crafted collection designed with a focus on fluidity,
       simplicity, and ease of use. Powered by CSS with minimal markup.
       Completely open source and MIT licensed.
