@@ -1,5 +1,5 @@
 <script>
-  export let mainColor = "orangered";
+  export let mainColor;
 </script>
 
 <div class="wrapper" style="--mainColor:{mainColor}">
