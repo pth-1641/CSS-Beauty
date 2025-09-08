@@ -1,7 +1,7 @@
 <script>
   import { page } from "$app/stores";
   import Icon from "@iconify/svelte";
-  import { onDestroy, onMount } from "svelte";
+  import { onDestroy } from "svelte";
   import { fly } from "svelte/transition";
   import Footer from "../components/Footer.svelte";
   import Modal from "../components/Modal.svelte";
@@ -21,16 +21,18 @@
     }
   }
 
-  $: $isShowToast, hideToast();
-
-  onMount(() => {
+  function loadCssFile() {
+    if (typeof window === "undefined") return;
     const theme = localStorage.getItem("theme") || "light";
     appTheme.set(theme);
     themeLink =
       theme === "dark"
         ? '<link rel="stylesheet" href="/styles/prism-vs-dark.css">'
         : '<link rel="stylesheet" href="/styles/prism-vs-light.css">';
-  });
+  }
+
+  $: $isShowToast, hideToast();
+  $: $appTheme, loadCssFile();
 
   onDestroy(() => {
     if (timeout) clearTimeout(timeout);
