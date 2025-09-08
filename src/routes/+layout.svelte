@@ -83,7 +83,9 @@
     rel="stylesheet"
   />
 
-  {@html themeLink}
+  {#if themeLink}
+    {@html themeLink}
+  {/if}
 </svelte:head>
 
 <div class={`app ${$appTheme}`}>
